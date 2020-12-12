@@ -1,0 +1,18 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: consultabanquito@gmail.com # Correo creado consultban.....
+    password: juanpedro1996 # contrasenha para el correo de consulban...
+    port: 587
+    properties:
+      mail:
+        ssl:
+          enable: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    protocol: smtp
+    test-connection: false

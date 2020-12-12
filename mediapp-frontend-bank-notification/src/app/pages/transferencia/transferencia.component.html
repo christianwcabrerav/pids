@@ -1,0 +1,42 @@
+<div class="container">
+  <mat-toolbar>Realice su transferencia</mat-toolbar>
+  <form class="example-container" [formGroup]="form" (ngSubmit)="aceptar()" #frmTransferencia="ngForm">
+    <div [hidden]="true">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" required formControlName="idCuentaOrigen">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Cuenta de Origen" required readonly formControlName="numeroCuenta">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Moneda" required readonly formControlName="moneda">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Monto"  formControlName="monto">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Cuenta Destino"  formControlName="cuentaDestino">
+      <button matSuffix mat-stroked-button color="primary" type="button" [disabled]="!form.get('cuentaDestino').valid"
+              (click)="verificarCuentaDestino()">
+        <mat-icon>done</mat-icon>
+        <span>Verificar</span>
+      </button>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="frmTransferencia.invalid" class="example-full-width">
+      <mat-icon>east</mat-icon>
+      Transferir
+    </button>
+
+    <button mat-raised-button color="accent" routerLink="/cuenta" type="button" class="example-full-width margin-top-10">
+      <mat-icon>close</mat-icon>
+      <span>Cancelar</span>
+    </button>
+  </form>
+</div>
+

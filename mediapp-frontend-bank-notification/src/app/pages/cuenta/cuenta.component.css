@@ -1,0 +1,17 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.negrita {
+  font-weight: bold;
+  margin-bottom: 5px;
+}

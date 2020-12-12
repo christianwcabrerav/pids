@@ -1,0 +1,9 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Numero de cuenta" readonly value="{{ cuenta.numeroCuenta }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Se va a trasnferir a" readonly value="{{ cuenta.username }}">
+  </mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>

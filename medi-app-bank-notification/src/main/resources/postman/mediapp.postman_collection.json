@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "2a255f82-dadf-4533-9ad7-65dae6cd2a9e",
+    "name": "mediapp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "66c016da-8524-4b1d-a4e0-29fc9a160f1d",
+      "name": "create-token",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "mito89codex",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "mitomediapp",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "grant_type",
+              "value": "{{TOKEN_GRANT_TYPE}}",
+              "sessionValue": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "{{TOKEN_USERNAME}}",
+              "sessionValue": "mitocode",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{TOKEN_PASSWORD}}",
+              "sessionValue": "123",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{API_URL}}/oauth/token",
+          "host": [
+            "{{API_URL}}"
+          ],
+          "path": [
+            "oauth",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "61563605-f1dc-40e1-ac90-39b33bf8ef48",
+      "name": "get all pacientes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsibWl0b3Jlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiamFpbWUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTczOTY2MjI3LCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImp0aSI6IjU1MDhkNDQ4LTBmMjItNGQwYS1hODUzLTAzZmY0Y2E1MjQ3ZSIsImNsaWVudF9pZCI6Im1pdG9tZWRpYXBwIn0.CQ-E3S3aLYye_2hILBjUxj5_97mHKfnncuGAuUVwZro"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "{{API_URL}}/pacientes/",
+          "host": [
+            "{{API_URL}}"
+          ],
+          "path": [
+            "pacientes",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "29cb5ca3-3f4a-4aa7-ab37-74fcad90c19b",
+      "name": "get medico by id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsibWl0b3Jlc291cmNlaWQiXSwidXNlcl9uYW1lIjoibWl0b2NvZGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTQ1Nzc4ODQxLCJhdXRob3JpdGllcyI6WyJEQkEiLCJBRE1JTiJdLCJqdGkiOiI0ZmZmYzA5Ny0wMzlhLTQ5OGItYmFiZi0xMTQ3NTYwZDhiNmIiLCJjbGllbnRfaWQiOiJtaXRvbWVkaWFwcCJ9.vU96xgl7-9uPyD_cgzImuxTgxch3SN2IErNF6afUCsw"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:8080/medicos/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "medicos",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d461901a-7d69-4b7e-a39f-110e5c69e485",
+      "name": "get all medicos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsibWl0b3Jlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiamFpbWUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTQ1NzgyNjAwLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImp0aSI6ImMxNzFmOThkLWU4NjAtNDRkMy04ZDIyLTQ0ZmM4MGU4YTI5OCIsImNsaWVudF9pZCI6Im1pdG9tZWRpYXBwIn0.pDYVJBmLp0eScfv22pi_B61Svb9P9vtEm_kBZS515Ro"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:8080/medicos/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "medicos",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "b5c7f17b-9d41-4b6e-b166-a8d15c828764",
+      "name": "get consultas hateoas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsibWl0b3Jlc291cmNlaWQiXSwidXNlcl9uYW1lIjoicmVuYXRvIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTU2NjUzMDk1NCwiYXV0aG9yaXRpZXMiOlsiREJBIiwiQURNSU4iXSwianRpIjoiNGE1ZmJiOWUtMTZhMy00NWI2LWIwOTAtM2ZiNTc5NGVkMDQ0IiwiY2xpZW50X2lkIjoibWl0b21lZGlhcHAifQ.rbTMF0iJ5TMP28b72Tca_lhrAVLZHVJUuFqVP_M7RgQ"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:8080/consultas/hateoas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "consultas",
+            "hateoas"
+          ]
+        },
+        "description": "get consultas hateoas"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "1ab81ec1-41eb-4800-89fb-fbbf7048533e",
+        "type": "text/javascript",
+        "exec": [
+          "let API_URL = postman.getEnvironmentVariable('API_URL');",
+          "let TOKEN_USERNAME = postman.getEnvironmentVariable('TOKEN_USERNAME');",
+          "let TOKEN_PASSWORD = postman.getEnvironmentVariable('TOKEN_PASSWORD');",
+          "let TOKEN_GRANT_TYPE = postman.getEnvironmentVariable('TOKEN_GRANT_TYPE');",
+          "let AUTHORIZATION_USERNAME = postman.getEnvironmentVariable('AUTHORIZATION_USERNAME');",
+          "let AUTHORIZATION_PASSWORD = postman.getEnvironmentVariable('AUTHORIZATION_PASSWORD');",
+          "",
+          "const echoPostRequest = {",
+          "  url: API_URL + '/oauth/token',",
+          "  method: 'POST',",
+          "  header: {",
+          "      //'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',",
+          "      'Content-Type': 'multipart/form-data',",
+          "      'Authorization': 'Basic '+btoa(AUTHORIZATION_USERNAME + ':' + AUTHORIZATION_PASSWORD)",
+          "  },",
+          "  body: {",
+          "    mode: 'formdata',",
+          "    formdata: [",
+          "            {",
+          "                key: \"grant_type\", value: TOKEN_GRANT_TYPE, disabled: false, description: {content:\"\", type:\"text/plain\"}",
+          "                ",
+          "            },",
+          "            {",
+          "                key: \"username\", value: TOKEN_USERNAME, disabled: false, description: {content:\"\", type:\"text/plain\"}",
+          "                ",
+          "            },",
+          "            {",
+          "                key: \"password\", value: TOKEN_PASSWORD, disabled: false, description: {content:\"\", type:\"text/plain\"}",
+          "                ",
+          "            }",
+          "        ]",
+          "  }",
+          "};",
+          "",
+          "pm.sendRequest(echoPostRequest, function (err, res) {",
+          "    console.log(err ? err : res.json());",
+          "        if (err === null) {",
+          "            console.log('respuesta', res.json());",
+          "            console.log('Saving the token and expiry date')",
+          "            var responseJson = res.json();",
+          "            pm.environment.set('accesToken', responseJson.access_token)",
+          "    ",
+          "            // var expiryDate = new Date();",
+          "            // expiryDate.setSeconds(expiryDate.getSeconds() + responseJson.expires_in);",
+          "            // pm.environment.set('accessTokenExpiry', expiryDate.getTime());",
+          "        }",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "5195b4a1-9a87-4cdc-9a87-443a427b86e4",
+        "type": "text/javascript",
+        "exec": [
+          "// let jsonData = pm.response.json();",
+          "// let token = JSON.stringify(jsonData.access_token);",
+          "// pm.environment.set('accesToken', token);"
+        ]
+      }
+    }
+  ]
+}

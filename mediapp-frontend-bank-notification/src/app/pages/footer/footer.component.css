@@ -1,0 +1,11 @@
+footer {
+  background-color: #3F51B5;
+  color: white;
+  /*border-top: 1px solid #bbb;*/
+  text-align: center;
+  font-weight: normal;
+}
+
+.md-padding {
+  padding: 30px;
+}

@@ -1,0 +1,89 @@
+<div class="container">
+  <mat-toolbar>Configuraci&oacute;n del perfil</mat-toolbar>
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Recibir Notificaciones
+        </mat-panel-title>
+        <mat-panel-description>
+          Desactive para no recibir notificaciones
+          <mat-icon>notifications</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-slide-toggle [(ngModel)]="notificaciones"></mat-slide-toggle>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+      <button type="button" mat-raised-button color="primary" (click)="guardar()" class="example-full-width margin-top-10">
+        <mat-icon>save</mat-icon>
+        Guardar
+      </button>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Neutraliza tu cuenta
+        </mat-panel-title>
+        <mat-panel-description>
+          Desactive para no hacer transferencias
+          <mat-icon>card</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!--    <mat-slide-toggle [(ngModel)]="notificaciones"></mat-slide-toggle>-->
+
+      <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="idCuenta">
+          <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.idCuenta}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="numeroCuenta">
+          <mat-header-cell *matHeaderCellDef> Numero Cuenta</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.numeroCuenta}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="moneda">
+          <mat-header-cell *matHeaderCellDef> Moneda</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.moneda}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="saldo">
+          <mat-header-cell *matHeaderCellDef> Saldo</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.saldo}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="neutro">
+          <mat-header-cell *matHeaderCellDef> Neutro?</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-slide-toggle [checked]="row.neutro"></mat-slide-toggle>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+      </mat-table>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+      <button type="button" mat-raised-button color="primary" (click)="neutralizar()" class="example-full-width margin-top-10">
+        <mat-icon>save</mat-icon>
+        Guardar
+      </button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

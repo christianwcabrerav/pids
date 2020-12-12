@@ -1,0 +1,28 @@
+<a (click)="openMatMenuProgrammatically()" class="link-noti">
+  <mat-icon matBadge="{{ numeroNotificaciones}}" matBadgeColor="warn" *ngIf="numeroNotificaciones !== 0">notifications</mat-icon>
+  <mat-icon matBadgeColor="warn" *ngIf="numeroNotificaciones === 0">notifications_none</mat-icon>
+</a>
+
+<button mat-icon-button #triggerBtn [matMenuTriggerFor]="menuNotificaciones" disabled>
+</button>
+
+<!--<mat-icon matBadge="{{ numeroNotificaciones}}" matBadgeColor="warn" *ngIf="numeroNotificaciones !== 0">notifications</mat-icon>-->
+<!--<button mat-icon-button [matMenuTriggerFor]="menuNotificaciones" *ngIf="numeroNotificaciones === 0">-->
+<!--  <mat-icon matBadgeColor="warn">notifications_none</mat-icon>-->
+<!--</button>-->
+
+<mat-menu #menuNotificaciones="matMenu">
+  <div>
+    <mat-list>
+      <h3 mat-subheader>Notificaciones</h3>
+      <mat-list-item *ngFor="let noti of notificaciones">
+        <mat-icon mat-list-icon *ngIf="noti.tipoNotificacion == 1">arrow_forward</mat-icon>
+        <mat-icon mat-list-icon *ngIf="noti.tipoNotificacion == 2">arrow_back</mat-icon>
+        <h4 mat-line>{{noti.descripcion}}</h4>
+        <p mat-line> {{noti.fechaNotificacion | timeAgo}} </p>
+      </mat-list-item>
+<!--      <mat-divider></mat-divider>-->
+    </mat-list>
+  </div>
+</mat-menu>
+

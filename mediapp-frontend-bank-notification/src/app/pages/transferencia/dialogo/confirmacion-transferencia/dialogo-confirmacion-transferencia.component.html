@@ -1,0 +1,32 @@
+<mat-card>Transferencia exitosa</mat-card>
+<br>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Tipo de transaccion" readonly value="{{ data.tipoTransaction.descripcion }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cuenta de Origen" readonly value="{{ data.cuentaOrigen.numeroCuenta }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Nombre destinatario" readonly value="{{ data.cuentaDestino.username }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cuenta de destino" readonly value="{{ data.cuentaDestino.numeroCuenta }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Monto" readonly value="{{ data.monto }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Moneda" readonly value="{{ data.moneda }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Fecha de operacion" readonly value="{{ data.fechaOperacion }}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Numero de transaccion" readonly value="{{ data.codigoTransaction }}">
+  </mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="aceptar()" >
+  <mat-icon>credit_card</mat-icon>
+  Ir a mis cuentas
+</button>

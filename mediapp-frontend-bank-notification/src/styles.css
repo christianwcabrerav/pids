@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+div.container{
+  margin: 0px 100px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+form.normal-form{
+  margin: 10px;
+}
+
+.controles-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.controles-container > * {
+  width: 100%;
+}
+
+.add-bottom-padding{
+  padding-bottom: 10px;
+}
+/* radio group */
+mat-radio-group mat-radio-button{
+  margin-left: 5px;
+}
+
+.button-row button{
+  margin: 5px;
+}
